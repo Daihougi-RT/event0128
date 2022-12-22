@@ -1,0 +1,184 @@
+<!DOCTYPE html>  
+<html lang="ja">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="description" content="イベント会場申込フォーム" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>大放技登録フォーム</title>
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="favicon.ico">
+        <link rel="stylesheet" href="css/style.css" media="all" />
+    </head>
+
+    <body>
+        <div class="contact">           
+            <h1 class="contact-ttl" id="edit_area2">イベント会場申込フォーム</h1>
+            <img src="top.jpg" alt="写真" width="100%" height="100%">   
+            <form action="https://docs.google.com/forms/u/0/d/e/1FAIpQLScypYts2k8ANF6fFMI_quqbmwDgASLqzyMi-LhqMVn1NghYCg/formResponse" method="post" target="hidden_iframe" onsubmit="submitted=true;">
+
+                <table class="contact-table">
+                    <tr>
+                        <th class="contact-item">メールアドレス</th>
+                        <td class="contact-body">
+                            <input id="email_1" name="entry.586642027" type="email" required="required" placeholder="必須" class="form-text"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="contact-item">メールアドレス（確認用）</th>
+                        <td class="contact-body">
+                            <input type="email" id="email_2" required="required" placeholder="必須" name="entry.1698268279" class="form-text" oninput="CheckEmail_2(this)" value=""/>
+                        </td>
+                    </tr>
+                   
+                    <tr>
+                        <th class="contact-item">氏　名</th>
+                        <td class="contact-body">
+                            <input type="text" name="entry.1410414216" required="required" placeholder="必須" class="form-text"/>           
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="contact-item">施設名</th>
+                        <td class="contact-body">
+                            <input type="text" name="entry.1428001623" required="required" placeholder="必須" class="form-text2"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="contact-item">イベント名</th>
+                        <td class="contact-body">
+                            <label class="contact-keitai">
+                                <input type="radio" id="event1" name="entry.1997611936" required="required" value="2023年1月28日（土）組織部学術セミナー（担当：中央ブロック）" checked="checked"/>
+                                <span class="contact-skill-txt" id="edit_area10">2023年1月28日（土）組織部学術セミナー（担当：中央ブロック）</span>
+                                <span class="contact-skill-txt" id="edit_area1"></span>
+                            </label>                                                                 
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="contact-item">参加形態</th>
+                        <td class="contact-body">
+                            <label class="contact-skill">
+                                <input type="radio" id="kaijyo" name="entry.2089356056" value="会場参加" checked="checked"/>
+                                <span class="contact-skill-txt" id="edit_area4">会場参加　大放技会員限定 先着12名（1月25日まで受付）</span>
+                            </label>                                                           
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th class="contact-item">区　分</th>
+                        <td class="contact-body">
+                            <label class="contact-skill">
+                                <input type="radio" name="entry.993160242" value="大放技会員" checked="checked" onclick="connecttext0('textforscb3',this.checked); "/>
+                                <span class="contact-skill-txt">大放技会員・協賛会員</span>
+                            </label>
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <th class="contact-item">大放技番号</th>
+                        <td class="contact-body">
+                            <input type="number" name="entry.1367373140" required="required" id ="dn" class="form-text3"/>
+                             <font size="2"> 必須（4桁の数字）協賛会員は"0"</font>
+                        </td>
+                    </tr>  
+                    <tr>
+                        <th class="contact-item">ブロック名</th>
+                        <td class="contact-body">
+                            <select name="entry.1481782592" required="required" class="form-select" id ="bn">
+                            　　<option value="ブロック名" >選択してください</option>
+                                <option value="中央ブロック">中央ブロック</option>
+                                <option value="東ブロック" >東ブロック</option>
+                                <option value="西ブロック" >西ブロック</option>
+                                <option value="南ブロック" >南ブロック</option>
+                                <option value="北ブロック" >北ブロック</option>
+                                <option value="協賛会員" >協賛会員</option>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="contact-item">日放技番号</th>
+                        <td class="contact-body">
+                            <input type="number" name="entry.2034226305" required="required" id ="nn" class="form-text3"/>
+                             <font size="2"> 必須（5桁の数字）協賛会員は"0"</font>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th class="contact-item">備　考</th>
+                        <td class="contact-body">
+                            <textarea name="entry.1785413313" class="form-textarea" placeholder="何かご意見やご要望・ご質問等があればご記入ください"></textarea>
+                        </td>
+                    </tr>
+                </table>
+
+                <input class="contact-submit" id="conf" type="submit" name="submit" value="参加申込"/>
+            </form>
+            <script>
+                let submitted = false;
+            
+                const page_transition = function () {
+                    if(submitted){
+                        window.location = 'send.html';
+                    }
+                }
+            </script>    
+            <iframe name="hidden_iframe" style="display:none;" onload="page_transition()"></iframe>
+           
+            <script language="JavaScript" type="text/javascript">
+           // <!--
+              function CheckEmail_2(input){              
+                //IE対応の為変更
+                //var mail = email_2.value;
+                //メールフォームの値を取得
+                //var form = document.getElementById("email_1");
+                var mail = document.getElementById("email_1").value; //メールフォームの値を取得
+                var mailConfirm = input.value; //メール確認用フォームの値を取得(引数input)
+ 
+                //*input.setCustomValidity(mail)
+                //* パスワードの一致確認
+                if(mail != mailConfirm){
+                  input.setCustomValidity('メールアドレスが一致しません'); // エラーメッセージのセット
+                }else{
+                  input.setCustomValidity(''); // エラーメッセージのクリア
+                }
+              }
+              
+              //  開催日・会場参加の締め切り日設定
+              var kaisai_day1 = new Date("2023-01-28T23:59:59");  // event1(MRI) の開催日を指定 '2021-12-16T16:36:59'
+              var today = new Date();                             // 今日の日付を取得 
+              var todaytime  = today.getTime();                   // 今日の日付を時間に変換 
+              var web1_endtime  = kaisai_day1.getTime();          // 開催日（締切日）を時間に変換
+
+              //　ここを変更！！  もしevent1の定員がいっぱいになった時は”-3”を大きな数字に代えて，締め切る！！！
+              var kaijyo1_endtime  = kaisai_day1.setDate(kaisai_day1.getDate() -3); // 締切日を3日前にして時間に変換
+              var comment1 = "";
+
+              if(web1_endtime < todaytime){// event1開催日にWebも締め切り
+                
+                comment1= "<font color='red'>注：上記イベントは締め切りました</font>";
+                document.getElementById("edit_area1").innerHTML = comment1;
+                document.getElementById("event1").disabled = true;
+                document.getElementById("edit_area10").style.color = "gray";    
+
+                }else if(kaijyo1_endtime < todaytime){// 会場参加の締め切り 
+                  let event1 = document.getElementById('event1');
+                  event1.addEventListener('change', valueChange1);
+                  let event2 = document.getElementById('event2');           
+                  event2.addEventListener('change', valueChange2);
+                  comment1= "<font color='red'>注：上記イベントの会場参加は締め切りました</font>";
+                  document.getElementById("edit_area1").innerHTML = comment1;
+
+                  function valueChange1(){
+                    if (event1.checked) {
+                      document.getElementById("kaijyo").disabled = true;
+                      document.getElementById("edit_area4").style.color = "gray";              
+                    }
+                  }
+                  function valueChange2(){
+                    if (event2.checked) {
+                      document.getElementById("kaijyo").disabled = false;
+                      document.getElementById("edit_area4").style.color = "black";                   
+                    }  
+                  }   
+               }
+            </script>            
+        </div>
+    </body>
+</html>
